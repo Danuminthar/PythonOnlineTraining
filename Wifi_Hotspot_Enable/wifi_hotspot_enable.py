@@ -4,8 +4,6 @@ import os
 os.system('cls')
 print("Wireless Enable")
 print()
-ssid="DanuMinthar"
-password="12345678"
 cmd="0"
 while cmd!="3":
     print ("1-start hotspot")
@@ -15,13 +13,15 @@ while cmd!="3":
     if cmd=="1":
         ssid=input("Please Enter SSID: ")
         password=input("Enter Password: ")
-        command="netsh wlan set hostednetwork mode=allow ssid=" + ssid + " key=" + password
+        command="netsh wlan set hostednetwork mode=allow ssid=" +ssid + " key="+ password
         os.system(command)
         os.system("netsh wlan start hostednetwork")
     if cmd=="2":
         os.system("netsh wlan stop hostednetwork")
     if cmd=="3":
         quit()
+
     else:
         print("You can't enter this letter!,Please re-enter")
-        os.system("pause")
+        print()
+        #os.system("pause")
